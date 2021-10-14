@@ -24,12 +24,13 @@ h6 {
 }
 
 a {
-  color: #000000;
+  color: #636363;
   transition: all .5s ease;
 }
 
 a:hover {
-  color: #2eca6a;
+  /* color: #6e8a79; */
+  color: #fff;
   text-decoration: none;
 }
 
@@ -81,7 +82,7 @@ a:hover {
 }
 
 .text-brand {
-  color: #000000;
+  color: #fff;
   font-size: 2rem;
   font-weight: 600;
 }
@@ -1513,7 +1514,7 @@ a:hover {
 .section-footer {
   padding-top: 60px;
   margin-top: 60px;
-  background: #f3f3f3;
+  background: #0f0f0f;
 }
 
 .section-footer ul {
@@ -1523,7 +1524,7 @@ a:hover {
 .section-footer .item-list-a i {
   font-size: 18px;
   padding-right: 4px;
-  color: #2eca6a;
+  color: #fff;
 }
 
 .section-footer .widget-a .w-title-a {
