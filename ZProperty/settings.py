@@ -126,6 +126,11 @@ STATICFILES_DIRS = [
     '/var/www/static/',
 ]
 
+MEDIA_URL = '/Media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "static/Media")
+
+
+
 # Email Settings
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
