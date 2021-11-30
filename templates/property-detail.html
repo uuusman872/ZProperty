@@ -1,0 +1,311 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+{% include "header.html" %}
+{% endblock header %}
+
+{% block body %}
+
+
+<!--/ Intro Single star /-->
+<!--  <section class="intro-single">-->
+<!--    <div class="container">-->
+<!--      <div class="row">-->
+<!--        <div class="col-md-12 col-lg-8  wow fadeInDownBig">-->
+<!--          <div class="title-single-box">-->
+<!--            <h1 class="title-single">{{plan.Title}}</h1>-->
+<!--            <span class="color-text-a">{{plan.Location}}</span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-12 col-lg-4">-->
+<!--          <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">-->
+<!--            <ol class="breadcrumb">-->
+<!--              <li class="breadcrumb-item">-->
+<!--                <a href="{% url 'index' %}">Home</a>-->
+<!--              </li>-->
+<!--              <li class="breadcrumb-item">-->
+<!--                <a href="{% url 'property-grid' %}">Properties</a>-->
+<!--              </li>-->
+<!--              <li class="breadcrumb-item active" aria-current="page">-->
+<!--                304 Blaster Up-->
+<!--              </li>-->
+<!--            </ol>-->
+<!--          </nav>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+<!--/ Intro Single End /-->
+
+{% include 'detailPageHeaders.html' %}
+
+<!--/ Property Single Star /-->
+<section class="property-single nav-arrow-b ">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 ">
+
+                <div class="row justify-content-between">
+                    <div class="col-md-5 col-lg-4 ">
+                        <div class="property-price d-flex justify-content-center foo wow fadeInLeftBig">
+                            <div class="card-header-c d-flex">
+                                <div class="card-box-ico">
+                                </div>
+                                <div class="card-title-c align-self-center wow fadeInLeft">
+                                    <h5 class="title-c">{{plan_detail.Price}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="property-summary">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="title-box-d section-t4 wow fadeInLeft">
+                                        <h3 class="title-d">Quick Summary</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="summary-list wow fadeInLeft">
+                                <ul class="list">
+                                    <li class="d-flex justify-content-between">
+                                        <strong>Property ID:</strong>
+                                        <span>{{plan_detail.id}}</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between">
+                                        <strong>Location:</strong>
+                                        <span>{{plan_detail.Location}}</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between">
+                                        <strong>Property Type:</strong>
+                                        <span>{{plan_detail.property_type}}</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between">
+                                        <strong>Status:</strong>
+                                        <span>{{plan_detail.status}}</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between">
+                                        <strong>Area:</strong>
+                                        <span>{{plan_detail.Area}}
+                      </span>
+                                    </li>
+                                    <li class="d-flex justify-content-between">
+                                        <strong>Beds:</strong>
+                                        <span>{{plan_detail.num_bedRooms}}</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between">
+                                        <strong>Baths:</strong>
+                                        <span>{{plan_detail.num_WashRooms}}</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between">
+                                        <strong>Garage:</strong>
+                                        <span>{{plan_detail.num_Garage}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-lg-7 section-md-t3 wow fadeInRight">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="title-box-d">
+                                    <h3 class="title-d">Property Description</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="property-description">
+                            <p class="description color-text-a">
+                                {{plan_detail.overview}}
+                            </p>
+                        </div>
+                        <div class="row section-t3">
+                            <div class="col-sm-12">
+                                <div class="title-box-d">
+                                    <h3 class="title-d">Amenities</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% include 'detailformfooter.html' %}
+
+                        <!--              <div class="amenities-list color-text-a">-->
+                        <!--                <ul class="list-a no-margin">-->
+                        <!--                  {% for am in Ama %}-->
+                        <!--                  <li> {{am.name}} </li>-->
+                        <!--                  {% endfor %}-->
+                        <!--                </ul>-->
+                        <!--              </div>-->
+                        <!--            </div>-->
+                        <!--          </div>-->
+                        <!--        </div>-->
+                        <!--        <div class="col-md-10 offset-md-1 wow fadeInUpBig">-->
+                        <!--          <ul class="nav nav-pills-a nav-pills mb-3 section-t3" id="pills-tab" role="tablist">-->
+                        <!--            <li class="nav-item">-->
+                        <!--              <a class="nav-link active" id="pills-video-tab" data-toggle="pill" href="#pills-video" role="tab"-->
+                        <!--                aria-controls="pills-video" aria-selected="true">Video</a>-->
+                        <!--            </li>-->
+                        <!--            <li class="nav-item">-->
+                        <!--              <a class="nav-link" id="pills-plans-tab" data-toggle="pill" href="#pills-plans" role="tab" aria-controls="pills-plans"-->
+                        <!--                aria-selected="false">Floor Plans</a>-->
+                        <!--            </li>-->
+                        <!--            <li class="nav-item">-->
+                        <!--              <a class="nav-link" id="pills-map-tab" data-toggle="pill" href="#pills-map" role="tab" aria-controls="pills-map"-->
+                        <!--                aria-selected="false">Ubication</a>-->
+                        <!--            </li>-->
+                        <!--          </ul>-->
+                        <!--          <div class="tab-content" id="pills-tabContent">-->
+                        <!--            <div class="tab-pane fade show active" id="pills-video" role="tabpanel" aria-labelledby="pills-video-tab">-->
+                        <!--              <iframe src="https://www.youtube.com/embed/{{plan.video_url}}" width="100%" height="460" frameborder="0"-->
+                        <!--                webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
+                        <!--            </div>-->
+                        <!--            <div class="tab-pane fade" id="pills-plans" role="tabpanel" aria-labelledby="pills-plans-tab">-->
+                        <!--              <img width="100%" height="500px" src="{{plan.flowPlan_Image.url}}" alt="" >-->
+                        <!--            </div>-->
+                        <!--            <div class="tab-pane fade" id="pills-map" role="tabpanel" aria-labelledby="pills-map-tab">-->
+                        <!--              {{plan.locationFrame|safe}}-->
+                        <!--            </div>-->
+                        <!--          </div>-->
+                        <!--        </div>-->
+                        <!--      -->
+                        <!--          {% comment %} <div class="row">-->
+                        <!--            <div class="col-md-6 col-lg-4">-->
+                        <!--              <img src="{% static 'img/agent-4.jpg' %}" alt="" class="img-fluid">-->
+                        <!--            </div>-->
+                        <!--            <div class="col-md-6 col-lg-4">-->
+                        <!--              <div class="property-agent">-->
+                        <!--                <h4 class="title-agent">Anabella Geller</h4>-->
+                        <!--                <p class="color-text-a">-->
+                        <!--                  Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet-->
+                        <!--                  dui. Quisque velit nisi,-->
+                        <!--                  pretium ut lacinia in, elementum id enim.-->
+                        <!--                </p>-->
+                        <!--                <ul class="list-unstyled">-->
+                        <!--                  <li class="d-flex justify-content-between">-->
+                        <!--                    <strong>Phone:</strong>-->
+                        <!--                    <span class="color-text-a">(222) 4568932</span>-->
+                        <!--                  </li>-->
+                        <!--                  <li class="d-flex justify-content-between">-->
+                        <!--                    <strong>Mobile:</strong>-->
+                        <!--                    <span class="color-text-a">777 287 378 737</span>-->
+                        <!--                  </li>-->
+                        <!--                  <li class="d-flex justify-content-between">-->
+                        <!--                    <strong>Email:</strong>-->
+                        <!--                    <span class="color-text-a">annabella@example.com</span>-->
+                        <!--                  </li>-->
+                        <!--                  <li class="d-flex justify-content-between">-->
+                        <!--                    <strong>Skype:</strong>-->
+                        <!--                    <span class="color-text-a">Annabela.ge</span>-->
+                        <!--                  </li>-->
+                        <!--                </ul>-->
+                        <!--                <div class="socials-a">-->
+                        <!--                  <ul class="list-inline">-->
+                        <!--                    <li class="list-inline-item">-->
+                        <!--                      <a href="#">-->
+                        <!--                        <i class="fa fa-facebook" aria-hidden="true"></i>-->
+                        <!--                      </a>-->
+                        <!--                    </li>-->
+                        <!--                    <li class="list-inline-item">-->
+                        <!--                      <a href="#">-->
+                        <!--                        <i class="fa fa-twitter" aria-hidden="true"></i>-->
+                        <!--                      </a>-->
+                        <!--                    </li>-->
+                        <!--                    <li class="list-inline-item">-->
+                        <!--                      <a href="#">-->
+                        <!--                        <i class="fa fa-instagram" aria-hidden="true"></i>-->
+                        <!--                      </a>-->
+                        <!--                    </li>-->
+                        <!--                    <li class="list-inline-item">-->
+                        <!--                      <a href="#">-->
+                        <!--                        <i class="fa fa-pinterest-p" aria-hidden="true"></i>-->
+                        <!--                      </a>-->
+                        <!--                    </li>-->
+                        <!--                    <li class="list-inline-item">-->
+                        <!--                      <a href="#">-->
+                        <!--                        <i class="fa fa-dribbble" aria-hidden="true"></i>-->
+                        <!--                      </a>-->
+                        <!--                    </li>-->
+                        <!--                  </ul>-->
+                        <!--                </div>-->
+                        <!--              </div>-->
+                        <!--            </div> {% endcomment %}-->
+
+                        <!--          -->
+                        <!--          </div>-->
+                        <!--        </div>-->
+                        <!--      </div>-->
+                        <!--    </div>-->
+                        <!--  </section>-->
+                        <!--  &lt;!&ndash;/ Property Single End /&ndash;&gt;-->
+
+
+                        <!--<div class="inquiry-section">-->
+
+                        <!--  <div class="inquiry-section1">-->
+
+                        <!--    <div class="col-md-12 wow fadeInUpBig">-->
+                        <!--      <div class="row section-t3">-->
+                        <!--        <div class="col-sm-12">-->
+                        <!--          <div class="title-box-d">-->
+                        <!--            <h3 class="title-d">Property Inquiry Form</h3>-->
+                        <!--          </div>-->
+                        <!--        </div>-->
+                        <!--      </div>-->
+
+                        <!--        <div class="">-->
+                        <!--          <div class="property-contact">-->
+                        <!--            <form class="form-a" method="POST" action="">-->
+                        <!--              {% csrf_token %}-->
+                        <!--           -->
+                        <!--             <div class="row">-->
+                        <!--               <div class="col-md-12 mb-1">-->
+                        <!--                 <div class="form-group">-->
+                        <!--            -->
+                        <!--                        {{ formData.name }}-->
+                        <!--                 </div>-->
+                        <!--               </div>-->
+                        <!--               <div class="col-md-12 mb-1">-->
+                        <!--                 <div class="form-group">-->
+                        <!--                   {{ formData.email }}-->
+                        <!--                 </div>-->
+                        <!--               </div>-->
+                        <!--               <div class="col-md-12 mb-1">-->
+                        <!--                 <div class="form-group">-->
+                        <!--                   {{ formData.phone }}-->
+                        <!--                 </div>-->
+                        <!--               </div>-->
+                        <!--                <div class="col-md-12 mb-1">-->
+                        <!--                 <div class="form-group">-->
+                        <!--                   {{ formData.Subject}}-->
+                        <!--                 </div>-->
+                        <!--               </div>-->
+                        <!--               <div class="col-md-12 mb-1">-->
+                        <!--                 <div class="form-group">-->
+                        <!--                   {{ formData.Question}}-->
+
+                        <!--                 </div>-->
+                        <!--               </div>-->
+                        <!--               <div class="col-md-12">-->
+                        <!--                  <button type="submit" class="btn btn-a">Send Message</button>-->
+                        <!--                </div>-->
+                        <!--              </div>-->
+                        <!--            </form>-->
+                        <!--          </div>-->
+                        <!--        </div>-->
+                        <!--</div>-->
+                        <!--  </div>-->
+                        <!--  <div class="inquiry-section2">-->
+                        <!--    <img src="{% static 'img\about-1.jpg' %}" alt="img">-->
+                        <!--  </div>-->
+
+                        <!--</div>-->
+
+                        <!--  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>-->
+                        <!--  <div id="preloader"></div>-->
+
+                        {% endblock body %}
+
+
+                        {% block footer %}
+
+                        {% include "footer.html" %}
+
+                        {% endblock footer %}
