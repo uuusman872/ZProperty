@@ -1,0 +1,86 @@
+{% load static %}
+{% comment %} <section class="intro-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-8">
+                <div class="title-single-box">
+                    <h1 class="title-single">{{plan_detail.Title}}</h1>
+                    <span class="color-text-a">{{plan_detail.Location}}</span>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-4">
+                <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="{% url 'index' %}">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="property-grid.html">Properties</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            304 Blaster Up
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section> {% endcomment %}
+
+<div class="intro intro-carousel">
+  <div id="carousel" class="owl-carousel owl-theme">
+    
+    <div class="carousel-item-a intro-item bg-image" style="background-image: url({% static 'img/image-slider2.jpeg' %})">
+      <div class="overlay overlay-a"></div>
+      <div class="intro-content display-table">
+        <div class="table-cell">
+          <div class="container">
+            <div class="row justify-content-center" >
+              <div class="col-lg-8">
+                <div class="intro-body">
+                  <p class="intro-title-top detail-intro-text">{{plan_detail.Title}} 
+                  {{plan_detail.Location}}
+                  </p>
+                  <p class="intro-title-top detail-intro-text"> 
+                  {{plan_detail.Location}}
+                  </p>
+                   <p class="intro-subtitle intro-price">
+          
+                    <a href="#Interest-form"><span class="price-a">Register your Interest</span></a>
+                  </p>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item-a intro-item bg-image" style="background-image: url({% static 'img/image-slider2.jpeg' %})">
+      <div class="overlay overlay-a"></div>
+      <div class="intro-content display-table">
+        <div class="table-cell">
+          <div class="container">
+            <div class="row justify-content-center" >
+              <div class="col-lg-8">
+                <div class="intro-body">
+                  <p class="intro-title-top detail-intro-text">{{plan_detail.Title}} 
+                  {{plan_detail.Location}}
+                  </p>
+                  <p class="intro-title-top detail-intro-text"> 
+                  {{plan_detail.Location}}
+                  </p>
+                 <p class="intro-subtitle intro-price">
+          
+                    <a href="#Interest-form"><span class="price-a">Register your Interest</span></a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

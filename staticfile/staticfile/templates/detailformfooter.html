@@ -1,0 +1,291 @@
+{% load static %}
+<div class="amenities-list color-text-a">
+  <ul class="list-a no-margin">
+    {% for am in amentites %}
+    <li> {{am.name}} </li>
+    {% endfor %}
+  </ul>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-10 offset-md-1 wow fadeInUpBig">
+  <ul class="nav nav-pills-a nav-pills mb-3 section-t3" id="pills-tab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="pills-video-tab" data-toggle="pill" href="#pills-video" role="tab"
+         aria-controls="pills-video" aria-selected="true">Video</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="pills-plans-tab" data-toggle="pill" href="#pills-plans" role="tab" aria-controls="pills-plans"
+         aria-selected="false">Floor Plans</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="pills-map-tab" data-toggle="pill" href="#pills-map" role="tab" aria-controls="pills-map"
+         aria-selected="false">Location</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-video" role="tabpanel" aria-labelledby="pills-video-tab">
+      <iframe src="https://www.youtube.com/embed/{{plan_detail.video_url}}" width="100%" height="460" frameborder="0"
+              webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+    <div class="tab-pane fade" id="pills-plans" role="tabpanel" aria-labelledby="pills-plans-tab">
+      {% comment %} {% if plan_detail.flowPlan_Image  %}
+      <img width="100%" height="500px" src="{{plan_detail.flowPlan_Image.url}}" alt="No Image">
+      {% endif %} {% endcomment %}
+       <div id="property-single-carousel" class="owl-carousel owl-arrow gallery-property">
+            {% for img in Galleries %}
+            <div class="carousel-item-b carousel-detail">
+              <img src="{{img.Image.url}}" alt="img" class="floor-plans-img">
+            </div>
+            {% endfor %}
+          </div>
+    </div>
+    <div class="tab-pane fade" id="pills-map" role="tabpanel" aria-labelledby="pills-map-tab">
+      {{plan_detail.locationFrame|safe}}
+    </div>
+  </div>
+</div>
+
+{% comment %} <div class="row">
+  <div class="col-md-6 col-lg-4">
+    <img src="{% static 'img/agent-4.jpg' %}" alt="" class="img-fluid">
+  </div>
+  <div class="col-md-6 col-lg-4">
+    <div class="property-agent">
+      <h4 class="title-agent">Anabella Geller</h4>
+      <p class="color-text-a">
+        Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
+        dui. Quisque velit nisi,
+        pretium ut lacinia in, elementum id enim.
+      </p>
+      <ul class="list-unstyled">
+        <li class="d-flex justify-content-between">
+          <strong>Phone:</strong>
+          <span class="color-text-a">(222) 4568932</span>
+        </li>
+        <li class="d-flex justify-content-between">
+          <strong>Mobile:</strong>
+          <span class="color-text-a">777 287 378 737</span>
+        </li>
+        <li class="d-flex justify-content-between">
+          <strong>Email:</strong>
+          <span class="color-text-a">annabella@example.com</span>
+        </li>
+        <li class="d-flex justify-content-between">
+          <strong>Skype:</strong>
+          <span class="color-text-a">Annabela.ge</span>
+        </li>
+      </ul>
+      <div class="socials-a">
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <a href="#">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">
+              <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">
+              <i class="fa fa-dribbble" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> {% endcomment %}
+
+
+</div>
+</div>
+</div>
+</div>
+</section>
+<!--/ Property Single End /-->
+
+
+{% comment %} invesments plan {% endcomment %}
+  {% if invesments %}
+<div class="main-container wow fadeInRightBig">
+  <div class="heading">
+    <h1 class="heading__title">Investment Plans</h1>
+  </div>
+  <div class="cards">
+    {% for plans in invesments %}
+    <div class="card card-1">
+      <h2 class="card__title"> {{plans.investmentPlan}} </h2>
+      <p>  {{plans.investmentDetails}} </p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+  {% endif %}
+
+{% comment %} paymentPlans {% endcomment %}
+{% if paymentPlans %}
+<h2 id="title" class="heading__title ">Payment Plans </h2> 
+<div class="hover-table-layout wow fadeInLeftBig">
+{% for plans in paymentPlans %}
+    <div class="listing-item">
+        <figure class="image">
+            <img src="{% static 'img/logo/logo-img.jpg' %}" alt="image">
+            <figcaption>
+              <div class="caption">
+                <h1>  </h1>
+                <p></p>
+              </div>
+            </figcaption>
+        </figure>
+       <div class="listing">
+            <h4>{{plans.Instalment_name}}</h4>
+            <h4>{{plans.Installment_plan}} </h4>
+        </div> 
+    </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<section class="contact " id="Interest-form">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 section-t8 wow fadeInUpBig">
+        <h3 class="title-d prop-heading heading__title">Property Inquiry Form</h3>
+        <div class="row">
+          <div class="col-md-7">
+            <form method="POST" action="">
+              {% csrf_token %}
+              {% include 'messages.html' %}
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <div class="form-group">
+                    {{form.name}}
+                    <div class="validation"></div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="form-group">
+                    {{form.email}}
+                    <div class="validation"></div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="form-group">
+                    {{form.phone}}
+                    <div class="validation"></div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="form-group">
+                    {{form.Subject}}
+                    <div class="validation"></div>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="form-group">
+                    {{form.Question}}
+                    <div class="validation"></div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <input value="Send Message" type="submit" class="btn btn-a">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-5 section-md-t3">
+            <div class="icon-box section-b2">
+              <div class="icon-box-icon">
+                <span class="ion-ios-paper-plane"></span>
+              </div>
+              <div class="icon-box-content table-cell">
+                <div class="icon-box-title">
+                  <h4 class="icon-title">Say Hello</h4>
+                </div>
+                <div class="icon-box-content">
+                  <p class="mb-1">Email.
+                    <span class="color-a">zProperty@gmail.com</span>
+                  </p>
+                  <p class="mb-1">Phone.
+                    <span class="color-a">+44 7594 488801</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="icon-box section-b2">
+              <div class="icon-box-icon">
+                <span class="ion-ios-pin"></span>
+              </div>
+              <div class="icon-box-content table-cell">
+                <div class="icon-box-title">
+                  <h4 class="icon-title">Find us in</h4>
+                </div>
+                <div class="icon-box-content">
+                  <p class="mb-1">
+                    London, UK,
+                    <br> EE. UU.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="icon-box">
+              <div class="icon-box-icon">
+                <span class="ion-ios-redo"></span>
+              </div>
+              <div class="icon-box-content table-cell">
+                <div class="icon-box-title">
+                  <h4 class="icon-title">Social networks</h4>
+                </div>
+                <div class="icon-box-content">
+                  <div class="socials-footer">
+                    <ul class="list-inline">
+                      <li class="list-inline-item">
+                        <a href="#" class="link-one">
+                          <i class="fa fa-facebook"
+                             aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" class="link-one">
+                          <i class="fa fa-twitter"
+                             aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" class="link-one">
+                          <i class="fa fa-instagram"
+                             aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" class="link-one">
+                          <i class="fa fa-google-plus"
+                             aria-hidden="true"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+<div id="preloader"></div>
