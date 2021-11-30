@@ -1,1 +1,1 @@
-web: gunicorn ZProperty.wsgi --log-file -
+web: gunicorn ZProperty.wsgi.application --log-file -
