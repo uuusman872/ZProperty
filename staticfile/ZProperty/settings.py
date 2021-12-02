@@ -24,11 +24,12 @@ SECRET_KEY = '5ewuq_okax6omu@kbptng1&)twi&eyzs)!6-*9i12y#cw^jsw$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'zproperties.herokuapp.com']
+ALLOWED_HOSTS = ['*', 'zproperties.herokuapp.com']
 
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,6 +44,10 @@ INSTALLED_APPS = [
     'django_cleanup.apps.CleanupConfig',
 
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
@@ -130,6 +135,8 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = True
+
+
 
 from django.contrib.messages import constants as messages
 

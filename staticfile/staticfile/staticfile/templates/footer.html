@@ -1,0 +1,119 @@
+ <!-- Footer Start -->
+ {% load static %}
+    <section class="section-footer wow fadeInUp">
+    <div class="container">
+        <div class="row">
+        <div class="col-md-3 col-sm-6">
+            <div class="widget-a">
+            <div class="w-header-a">
+        <a class="navbar-brand text-brand" href="{% url 'index' %} ">
+        
+        <img src="{% static 'img/logo/logo.png' %}" width="160px" alt="logo">
+        </a>
+            </div>
+            <div class="w-body-a">
+            </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="widget-a">
+            <div class="footer-info-single">
+                <div class="w-header-a">
+                <h3 class="w-title-a text-brand">Explore</h3>
+                </div>
+                <div class="w-body-a">
+                <div class="w-body-a">
+                    <ul class="list-unstyled">
+                    {% if user.is_authenticated %}
+                        <li class="item-list-a">
+                            <i class="fa fa-angle-double-right"></i> <a href="{% url 'logout' %}">Logout</a>
+                        </li>
+                     {% else %}
+                        <li class="item-list-a">
+                            <i class="fa fa-angle-double-right"></i> <a href="{% url 'login' %}">Login</a>
+                        </li>
+                        <li class="item-list-a">
+                            <i class="fa fa-angle-double-right"></i> <a href="{% url 'register' %}">Register</a>
+                        </li>
+                    {% endif %}
+                    <li class="item-list-a">
+                        <i class="fa fa-angle-double-right"></i> <a href="{% url 'property-grid' %}">Living in Dubai</a>
+                    </li>
+                    <li class="item-list-a">
+                        <i class="fa fa-angle-double-right"></i> <a href="{% url 'agents' %}">Agents</a>
+                    </li>
+                    <li class="item-list-a">
+                        <i class="fa fa-angle-double-right"></i> <a href="{% url 'contact' %}">Contact Us</a>
+                    </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        
+
+        <div class="col-md-6 col-sm-12">
+            <div class="widget-a">
+            <div class="w-header-a">
+                <h3 class="w-title-a text-brand">The Company</h3>
+            </div>
+            <p>As 'Real Estate Agency of the Year 2020' – and with an established record of achievementand incredible service We are passionate about maintaining strong, long-lasting relationships with our clients, and are known for our impeccable service standards and professionalism. Our departments are committed to ensuring the best price and quality through its team of RERA qualified and certified  We work with a variety of the best developers the Dubai property market has to offer, such as Emaar, Meraas, Select Group, Ellington, Majid Al Futtaim to name a view. In short, we live, eat, breathe property! <brokers></brokers></p>
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row align-items-center">
+        <div class="col-md-12 text-center">
+            <nav class="nav-footer">
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                <a href="{% url 'index' %}">Home</a>
+                </li>
+                <li class="list-inline-item">
+                <a href="#">About</a>
+                </li>
+                <li class="list-inline-item">
+                <a href="{% url 'property-grid' %}">Off Plan Property</a>
+                </li>
+                <li class="list-inline-item">
+                <a href="{% url 'contact' %}">Contact</a>
+                </li>
+            </ul>
+            </nav>
+
+            <section class="pb-3">
+            <div class="row">
+
+                <div class="col-md-12 col-lg-12 text-center">
+                <a class="btn btn-outline-light btn-floating m-1"
+                    style="border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.2);" role="button"><i
+                    class="fa fa-facebook"></i></a>
+
+                <a class="btn btn-outline-light btn-floating m-1"
+                    style="border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.2);" role="button"><i
+                    class="fa fa-twitter"></i></a>
+
+                    <a class="btn btn-outline-light btn-floating m-1"
+                    style="border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.2);" role="button"><i
+                    class="fa fa-instagram"></i></a>
+
+                <a class="btn btn-outline-light btn-floating m-1"
+                    style="border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.2);" role="button"><i
+                    class="fa fa-google"></i></a>
+                </div>
+            </div>
+            </section>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Footer Ends -->
